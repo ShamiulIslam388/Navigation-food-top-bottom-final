@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap");
+
+:root {
+  --red: #ff3838;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  list-style: none;
+  font-family: "Nunito", sans-serif;
+  transition: all 0.3s linear;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 9%;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+  font-size: 2rem;
+  font-weight: bolder;
+  color: #666;
+}
+
+header .logo i {
+  color: var(--red);
+  padding-right: 0.5rem;
+}
+
+header .navbar a {
+  font-size: 1.2rem;
+  margin-right: 1.5rem;
+  color: #666;
+}
+
+header .navbar a:hover {
+  color: var(--red);
+}
+
+#menu-bar {
+  color: #666;
+  font-size: 1.6rem;
+  cursor: pointer;
+  border: 0.1rem solid #666;
+  border-radius: 0.5rem;
+  padding: 0.2rem 0.5rem;
+  padding-bottom: 0rem;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  #menu-bar {
+    display: initial;
+  }
+
+  header .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    /*     opacity: 0; */
+    background: #f7f7f7;
+    border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+
+  header .navbar.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    /*     top: 100%;
+    opacity: 1; */
+  }
+
+  header .navbar a {
+    display: block;
+    margin: 1rem;
+    padding: 1rem;
+    background: #fff;
+    border: 0.2rem solid rgba(0, 0, 0, 0.1);
+    border-left: 0.5rem solid var(--red);
+  }
+}
